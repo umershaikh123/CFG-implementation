@@ -1,0 +1,86 @@
+# Data Types
+<type> ::= "int" | "float" | "char" | "bool"
+<letter> ::= "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" | "_"  RE : [a-z]+
+<digit> ::= "0" | "1" | ... | "9" Re: [0-9]+
+<boolean> ::= "true" | "false"
+<character> ::= .+
+<relational-operator> ::= "<" | "<=" | ">" | ">=" | "==" | "!="
+<logical_operator> ::= 'OR' | 'AND' | 'NOT'
+<integer> ::= <digit> | <integer> <digit>
+<float> ::= <integer> "." <integer>
+<char_literal> ::= "'" <character> "'"
+<string> ::= """ <string_characters> """
+
+<string_characters> ::= <letter> | <integer> | <float>  |  <character> |  <letter> <string_characters> | <character> <string_characters>   | <float> <string_characters>
+
+
+# Variable Declearation and Initialization
+
+<declaration> ::= <type> <identifier> <new_d> ";" | <type> <identifier> "=" <value> <new_i> ";"
+<new_d> ::= "," <identifier> <new_d> | null
+<new_i> ::= "," <identifier> "=" <value> <new_i> | null
+<identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit>
+<value> ::= <integer> | <float> | <char_literal> | <string_literal> | <boolean>
+
+
+# Conditionals
+
+<statement> ::= <if-statement> | <if-else-statement> | <declaration> | for loop | while loop |
+<if-statement> ::= "if" "(" <expression> ")" <block>
+<if-else-statement> ::= "if" "(" <expression> ")" <block> "else" <block>
+<block> ::= "{" <statement-list> "}"
+<statement-list> ::= <statement> | <statement> <statement-list>
+<expression> ::= <value> <relational-operator> <value> <logical_operator> | <value> <realational_operator> <value>
+<value> ::= <identifier> | <integer> | <real> | <boolean>
+
+
+
+# Loop
+<statement> ::= <for-loop> | <while-loop> 
+<for-loop> ::= "for" "(" <for-init> ";" <expression> ";" <counter> ")" <block>
+<for-init> ::= <assignment> | <declaration>
+<assignment> ::= <identifier> "=" <expression>
+<declaration> ::= <type> <identifier>
+
+
+<counter> 
+
+<expression> ::= <value> <relational-operator> <value>
+<value> ::= <identifier> | <integer> | <real> | <boolean>
+
+<while-loop> ::= "while" "(" <expression> ")" <block>
+<do-while-loop> ::= "do" <block> "while" "(" <expression> ")" ";"
+<block> ::= "{" <statement-list> "}"
+<statement-list> ::= <statement> | <statement> <statement-list>
+
+
+# Functions
+
+<function> ::= <type> <identifier> "(" ")" "{" <statements> "}"
+
+<type> ::= "int" | "double" | "float" | "char" | "bool" | "void"
+
+<parameters> <type <identifier> | <type <identifier> "," <parameters>
+
+<statements> ::= <statement> | <statements> <statement>
+
+<statement> ::= <expression> ";" | <if_statement> | <while_loop> | <for_loop> | <return_statement> | <function_call> ";"
+
+<expression> ::= <identifier> "=" <value> | <identifier> "++" | <identifier> "--" | <value>
+
+<value> ::= <integer> | <real> | <char_literal> | <string_literal> | <boolean> | <identifier> | <function_call>
+
+
+<return_statement> ::= "return" <value> ";"
+<function_call> ::= <identifier> "(" <arguments> ")"
+<arguments> ::= <value> | <arguments> "," <value>
+
+
+
+
+
+
+
+
+
+
