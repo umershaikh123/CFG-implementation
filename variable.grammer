@@ -1,0 +1,29 @@
+
+
+
+# Variable Declearation and Initialization
+
+declaration -> type __ identifier _ new_d _ ";" | type _ identifier _ "=" value _ new_i ";"
+new_d -> _ "," identifier new_d | null
+new_i -> _ "," identifier "=" value new_i | null
+identifier -> letter | identifier letter | identifier digit
+value -> integer | float | string | char_literal | boolean
+ 
+digit -> [0-9]:+  
+letter -> [a-z]:+
+character -> [.]:+
+boolean -> "true" | "false"
+relational_Operator -> "<" | "<=" | ">" | ">=" | "==" | "!="
+type -> "int" | "float" | "char" | "bool"
+
+logical_operator -> "OR" | "AND" | "NOT"
+integer -> digit | integer digit
+float -> integer "." integer
+char_literal -> "'" character "'"
+
+string_characters -> letter | integer | float  |  character |  letter string_characters | character string_characters   | float string_characters
+
+string -> "'" string_characters "'"
+
+_ -> [ ]:*
+__ -> [ ]:+

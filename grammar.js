@@ -1,0 +1,85 @@
+// Generated automatically by nearley, version 2.20.1
+// http://github.com/Hardmath123/nearley
+(function () {
+function id(x) { return x[0]; }
+var grammar = {
+    Lexer: undefined,
+    ParserRules: [
+    {"name": "declaration", "symbols": ["type", "__", "identifier", "_", "new_d", "_", {"literal":";"}]},
+    {"name": "declaration", "symbols": ["type", "_", "identifier", "_", {"literal":"="}, "value", "_", "new_i", {"literal":";"}]},
+    {"name": "new_d", "symbols": ["_", {"literal":","}, "identifier", "new_d"]},
+    {"name": "new_d", "symbols": []},
+    {"name": "new_i", "symbols": ["_", {"literal":","}, "identifier", {"literal":"="}, "value", "new_i"]},
+    {"name": "new_i", "symbols": []},
+    {"name": "identifier", "symbols": ["letter"]},
+    {"name": "identifier", "symbols": ["identifier", "letter"]},
+    {"name": "identifier", "symbols": ["identifier", "digit"]},
+    {"name": "value", "symbols": ["integer"]},
+    {"name": "value", "symbols": ["float"]},
+    {"name": "value", "symbols": ["string"]},
+    {"name": "value", "symbols": ["char_literal"]},
+    {"name": "value", "symbols": ["boolean"]},
+    {"name": "digit$ebnf$1", "symbols": [/[0-9]/]},
+    {"name": "digit$ebnf$1", "symbols": ["digit$ebnf$1", /[0-9]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "digit", "symbols": ["digit$ebnf$1"]},
+    {"name": "letter$ebnf$1", "symbols": [/[a-z]/]},
+    {"name": "letter$ebnf$1", "symbols": ["letter$ebnf$1", /[a-z]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "letter", "symbols": ["letter$ebnf$1"]},
+    {"name": "character$ebnf$1", "symbols": [/[.]/]},
+    {"name": "character$ebnf$1", "symbols": ["character$ebnf$1", /[.]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "character", "symbols": ["character$ebnf$1"]},
+    {"name": "boolean$string$1", "symbols": [{"literal":"t"}, {"literal":"r"}, {"literal":"u"}, {"literal":"e"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "boolean", "symbols": ["boolean$string$1"]},
+    {"name": "boolean$string$2", "symbols": [{"literal":"f"}, {"literal":"a"}, {"literal":"l"}, {"literal":"s"}, {"literal":"e"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "boolean", "symbols": ["boolean$string$2"]},
+    {"name": "relational_Operator", "symbols": [{"literal":"<"}]},
+    {"name": "relational_Operator$string$1", "symbols": [{"literal":"<"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "relational_Operator", "symbols": ["relational_Operator$string$1"]},
+    {"name": "relational_Operator", "symbols": [{"literal":">"}]},
+    {"name": "relational_Operator$string$2", "symbols": [{"literal":">"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "relational_Operator", "symbols": ["relational_Operator$string$2"]},
+    {"name": "relational_Operator$string$3", "symbols": [{"literal":"="}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "relational_Operator", "symbols": ["relational_Operator$string$3"]},
+    {"name": "relational_Operator$string$4", "symbols": [{"literal":"!"}, {"literal":"="}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "relational_Operator", "symbols": ["relational_Operator$string$4"]},
+    {"name": "type$string$1", "symbols": [{"literal":"i"}, {"literal":"n"}, {"literal":"t"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "type", "symbols": ["type$string$1"]},
+    {"name": "type$string$2", "symbols": [{"literal":"f"}, {"literal":"l"}, {"literal":"o"}, {"literal":"a"}, {"literal":"t"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "type", "symbols": ["type$string$2"]},
+    {"name": "type$string$3", "symbols": [{"literal":"c"}, {"literal":"h"}, {"literal":"a"}, {"literal":"r"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "type", "symbols": ["type$string$3"]},
+    {"name": "type$string$4", "symbols": [{"literal":"b"}, {"literal":"o"}, {"literal":"o"}, {"literal":"l"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "type", "symbols": ["type$string$4"]},
+    {"name": "logical_operator$string$1", "symbols": [{"literal":"O"}, {"literal":"R"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "logical_operator", "symbols": ["logical_operator$string$1"]},
+    {"name": "logical_operator$string$2", "symbols": [{"literal":"A"}, {"literal":"N"}, {"literal":"D"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "logical_operator", "symbols": ["logical_operator$string$2"]},
+    {"name": "logical_operator$string$3", "symbols": [{"literal":"N"}, {"literal":"O"}, {"literal":"T"}], "postprocess": function joiner(d) {return d.join('');}},
+    {"name": "logical_operator", "symbols": ["logical_operator$string$3"]},
+    {"name": "integer", "symbols": ["digit"]},
+    {"name": "integer", "symbols": ["integer", "digit"]},
+    {"name": "float", "symbols": ["integer", {"literal":"."}, "integer"]},
+    {"name": "char_literal", "symbols": [{"literal":"'"}, "character", {"literal":"'"}]},
+    {"name": "string_characters", "symbols": ["letter"]},
+    {"name": "string_characters", "symbols": ["integer"]},
+    {"name": "string_characters", "symbols": ["float"]},
+    {"name": "string_characters", "symbols": ["character"]},
+    {"name": "string_characters", "symbols": ["letter", "string_characters"]},
+    {"name": "string_characters", "symbols": ["character", "string_characters"]},
+    {"name": "string_characters", "symbols": ["float", "string_characters"]},
+    {"name": "string", "symbols": [{"literal":"'"}, "string_characters", {"literal":"'"}]},
+    {"name": "_$ebnf$1", "symbols": []},
+    {"name": "_$ebnf$1", "symbols": ["_$ebnf$1", /[ ]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "_", "symbols": ["_$ebnf$1"]},
+    {"name": "__$ebnf$1", "symbols": [/[ ]/]},
+    {"name": "__$ebnf$1", "symbols": ["__$ebnf$1", /[ ]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "__", "symbols": ["__$ebnf$1"]}
+]
+  , ParserStart: "declaration"
+}
+if (typeof module !== 'undefined'&& typeof module.exports !== 'undefined') {
+   module.exports = grammar;
+} else {
+   window.grammar = grammar;
+}
+})();
