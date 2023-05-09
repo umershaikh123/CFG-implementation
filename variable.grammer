@@ -3,7 +3,7 @@
 
 # Variable Declearation and Initialization
 
-declaration -> type __ identifier _ new_d _ ";" | type _ identifier _ "=" value _ new_i ";"
+declaration -> type __ identifier _ new_d _ ";" | type _ identifier _ "=" _  value _ new_i ";"
 new_d -> _ "," identifier new_d | null
 new_i -> _ "," identifier "=" value new_i | null
 identifier -> letter | identifier letter | identifier digit

@@ -6,7 +6,7 @@ var grammar = {
     Lexer: undefined,
     ParserRules: [
     {"name": "declaration", "symbols": ["type", "__", "identifier", "_", "new_d", "_", {"literal":";"}]},
-    {"name": "declaration", "symbols": ["type", "_", "identifier", "_", {"literal":"="}, "value", "_", "new_i", {"literal":";"}]},
+    {"name": "declaration", "symbols": ["type", "_", "identifier", "_", {"literal":"="}, "_", "value", "_", "new_i", {"literal":";"}]},
     {"name": "new_d", "symbols": ["_", {"literal":","}, "identifier", "new_d"]},
     {"name": "new_d", "symbols": []},
     {"name": "new_i", "symbols": ["_", {"literal":","}, "identifier", {"literal":"="}, "value", "new_i"]},

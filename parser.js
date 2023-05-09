@@ -7,9 +7,8 @@ const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 // Parse something!
 
 try {
-  parser.feed("bool a ;");
-  // parser.results is an array of possible pars ings.
-  console.log(JSON.stringify(parser.results)); // [[[[["foo"],"\n"]]]]
+  parser.feed("int a;");
+  console.log(`Variable Declaration : ${JSON.stringify(parser.results[0])}`);
 } catch (err) {
   console.log(`Parse failed with error ${err.message}`);
 }
