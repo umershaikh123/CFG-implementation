@@ -4,15 +4,68 @@
 # Variable Declearation and Initialization
 
 
-statement -> for_loop | while_loop | variable_Definition
+statement -> for_loop | while_loop | variable_Declare_Initialization 
 
-variable_Definition -> type __ identifier _ new_d _ ";" | type _ identifier _ "=" _ value _ new_i ";"
-new_d -> _ ","  _ identifier new_d    | _ {% id %}
-new_i -> _ ","  _ identifier _ "=" _ value new_i   | _ {% id %}
+
+variable_Declare_Initialization -> type __ identifier _ new_d _ ";" {%
+data => {
+    return {
+        type : "Variable Declaration",
+        dataType : data[0],
+        variable_name  : data[2],
+        multiple_declaration  : data[4],
+    }
+}
+%}
+
+| type _ identifier _ "=" _ value _ new_i ";" 
+
+{%
+data => {
+    return {
+        type : "Variable Initialization",
+        dataType : data[0],
+        variable_name  : data[2],
+        value  : data[6],
+        multiple_initialization  : data[8],
+
+    }
+}
+%}
+new_d -> _ ","  _ identifier new_d  {%
+data => {
+    return {
+        type : "new declaration",        
+        variable_name  : data[3],        
+        nested_Declaration  : data[4],        
+    }
+}
+%}
+
+| _ {% id %}
+
+new_i -> _ ","  _ identifier _ "=" _ value new_i  
+
+{%
+data => {
+    return {
+        type : "new Initialization",        
+        variable_name  : data[4],        
+        value  : data[8],
+        nested_Initialization  : data[9],        
+    }
+}
+%}
+
+
+| _ {% id %}
+
+
+
 identifier -> letter  {% id %} | identifier letter  {% id %} | identifier digit {% id %}
 value -> integer {% id %} | float {% id %} | string {% id %} | char_literal {% id %} | boolean {% id %}
  
-digit -> [0-9]:+  {% data => data[0].join("") %}
+digit -> [0-9]:+  {% data => Number(data[0].join("")) %}
 letter -> [a-z]:+  {% data => data[0].join("") %}
 character -> [^\"]  {% data => data[0].join("") %}
 

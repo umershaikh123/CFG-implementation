@@ -14,6 +14,9 @@ string -> """ string_characters """
 string_characters -> letter | integer | float  |  character |  letter string_characters | character string_characters   | float string_characters
 
 
+{% (data) => data[0] %} = {% id %}
+
+
 # Variable Declearation and Initialization
 
 declaration -> type identifier new_d ";" | type identifier "=" value new_i ";"
