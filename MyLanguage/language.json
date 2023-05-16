@@ -1,0 +1,66 @@
+[
+  [
+    [
+      {
+        "type": "Variable Declaration",
+        "dataType": "int",
+        "variable_name": "a",
+        "multiple_declaration": []
+      }
+    ],
+    [
+      {
+        "type": "Variable Declaration",
+        "dataType": "int",
+        "variable_name": "a",
+        "multiple_declaration": {
+          "type": "new declaration",
+          "variable_name": "b",
+          "nested_Declaration": {
+            "type": "new declaration",
+            "variable_name": "c",
+            "nested_Declaration": []
+          }
+        }
+      }
+    ],
+    [
+      {
+        "type": "Variable Initialization",
+        "dataType": "int",
+        "variable_name": "a",
+        "value": 10,
+        "multiple_initialization": []
+      }
+    ],
+    [
+      {
+        "type": "Variable Initialization",
+        "dataType": "int",
+        "variable_name": "a",
+        "value": 10,
+        "multiple_initialization": {
+          "type": "new Initialization",
+          "variable_name": [" "],
+          "value": {
+            "type": "new Initialization",
+            "variable_name": [" "],
+            "value": [" "]
+          }
+        }
+      }
+    ],
+    [
+      {
+        "type": "For Loop",
+        "for_init": {
+          "type": "For init assignment",
+          "assignment": ["int", [" "], "i", [], "=", [], [0]]
+        },
+        "expression": ["i", [], ["<"], [], [4]],
+        "counter": ["i", [["++"]]]
+      }
+    ],
+    [{ "type": "While Loop", "expression": ["i", [], ["<"], [], [3]] }]
+  ]
+]

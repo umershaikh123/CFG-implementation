@@ -7,7 +7,7 @@ var grammar = {
     ParserRules: [
     {"name": "program", "symbols": ["statements"]},
     {"name": "statements", "symbols": ["_", "statement", "_"], "postprocess": data => [data[1]]},
-    {"name": "statements", "symbols": ["statement", "_", {"literal":"\n"}, "statements"], "postprocess": data => [data[0] , ...data[3]]},
+    {"name": "statements", "symbols": ["statement", "_", {"literal":"\n"}, "statements"], "postprocess": data => [data[1] , ...data[3]]},
     {"name": "statement", "symbols": ["variable_Declare_Initialization"]},
     {"name": "statement", "symbols": ["for_loop"]},
     {"name": "statement", "symbols": ["while_loop"]},

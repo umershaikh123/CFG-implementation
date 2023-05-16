@@ -7,11 +7,15 @@ const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 // Parse something!
 
 try {
-  parser.feed("int a=10;");
-  //   parser.feed("int a,b,c;");
-  //   parser.feed("int a = 10;");
+  // use variable grammer
+  ///user input
+  // feed
+  // parser.feed("int a;");
+  // parser.feed("int a,b,c;");
+  // parser.feed("int a = 10;");
   // parser.feed("int a = 10 , b = 12, c = 12 ;");
-  // parser.feed("for(int i=0; i<2; d++){code...}");
+  // parser.feed("for(int i=0; i<4; i++){code...}");
+  parser.feed("while(i<3){code...}");
 
   console.log(`Variable Declaration : ${JSON.stringify(parser.results[0])}`);
 } catch (err) {

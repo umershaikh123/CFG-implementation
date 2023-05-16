@@ -6,7 +6,7 @@
 
 program -> statements
 statements -> _ statement _ {% data => [data[1]] %} 
-| statement _ "\n" statements {% data => [data[0] , ...data[3]] %}
+| statement _ "\n" statements {% data => [data[1] , ...data[4]] %}
 
 statement ->  variable_Declare_Initialization | for_loop | while_loop 
 

@@ -1,0 +1,9 @@
+[
+  {
+    "type": "Variable Initialization",
+    "dataType": "int",
+    "variable_name": "a",
+    "value": 10,
+    "multiple_initialization": []
+  }
+]
