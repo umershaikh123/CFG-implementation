@@ -1,0 +1,18 @@
+{
+  "name": "automata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "npx nearleyc variable.grammer -o grammar.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mz": "^2.7.0",
+    "nearley": "^2.20.1",
+    "nearly": "^1.8.1"
+  }
+}
